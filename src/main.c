@@ -8,7 +8,7 @@ int main()
 
     printf("src old: %s\n", src);
 
-    sym = memchr(src, '4', 10);
+    sym = s21_memchr(src, '4', 10);
 
     if (sym != NULL)
         sym[0] = '!';
