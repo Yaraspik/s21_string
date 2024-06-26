@@ -12,18 +12,17 @@ int main()
 
 void s21_memchr_test()
 {
-    char c = 33;
     unsigned char src[5000];
     FILE *file = fopen("test.txt", "r");
     char *sym = NULL, *sym2 = NULL;
     int error = 0, test_count = 1;
 
-    for (int i = 0; i < 94; i++)
+    for (int i = 33; i < 94; i++)
     {
         fscanf(file, "%9999[^\n]", src);
 
-        sym = s21_memchr(src, c, 10000);
-        sym2 = memchr(src, c, 10000);
+        sym = s21_memchr(src, i, 10000);
+        sym2 = memchr(src, i, 10000);
 
         if (sym != NULL && sym2 != NULL)
         {
@@ -36,8 +35,6 @@ void s21_memchr_test()
                 error++;
             }
         }
-
-        c++;
         test_count++;
     }
 

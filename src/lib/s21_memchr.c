@@ -16,13 +16,14 @@ void *s21_memchr(const void *arr, int c, size_t n)
     const unsigned char *_arr = arr;
     const unsigned char _c = c;
     void *res = NULL;
+    int _break = 0;
 
-    for (size_t i = 0; i < n; i++)
+    for (size_t i = 0; i < n && _break == 0; i++)
     {
         if (_arr[i] == _c)
         {
             res = (void *)_arr + i;
-            break;
+            _break = 1;
         }
     }
 
